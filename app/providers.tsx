@@ -9,12 +9,10 @@ import { CartProvider } from '@/components/cart-provider';
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <CartProvider>
-          {children}
-        </CartProvider>
+      <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        <CartProvider>{children}</CartProvider>
       </ThemeProvider>
-      {process.env.NODE_ENV === 'development' && <ReactQueryDevtools />}
+      {process.env.NODE_ENV === "development" && <ReactQueryDevtools />}
     </QueryClientProvider>
   );
 }
