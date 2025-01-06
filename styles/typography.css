@@ -1,0 +1,42 @@
+@layer base {
+  :root {
+    --font-scale-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+    --font-scale-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+    --font-scale-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+    --font-scale-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+    --font-scale-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+    --font-scale-2xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+    --font-scale-3xl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+  }
+
+  html {
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: var(--font-scale-base);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h1 { font-size: var(--font-scale-3xl); }
+  h2 { font-size: var(--font-scale-2xl); }
+  h3 { font-size: var(--font-scale-xl); }
+  h4 { font-size: var(--font-scale-lg); }
+  h5 { font-size: var(--font-scale-md); }
+  h6 { font-size: var(--font-scale-base); }
+
+  @media (max-width: 640px) {
+    html {
+      font-size: 14px;
+    }
+  }
+}
